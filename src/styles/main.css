@@ -1,0 +1,151 @@
+:root {
+    --font-title-: 'Prompt', sans-serif;
+    --font-subtitle-: 'Bubbler One', sans-serif;
+    --font-parag-: 'Libre Franklin', sans-serif;
+}
+body {
+    margin: 0;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    padding: 15px;
+    background-color: aqua;
+}
+
+.listaPizzas {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.cardPizza{
+    width: 330px;
+    min-width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 1px #ccc;  
+    border-radius: 19px;
+    background: #f7f7f7;
+    box-shadow:  15px 15px 51px #d7d7d7,
+                -15px -15px 51px #ffffff;
+}
+
+.cardPizza img {
+   border-top-left-radius: 19px;
+   border-top-right-radius: 19px;
+}
+
+.cardPizza h2{
+    padding: 0 30px;
+    font-family: var(--font-title-);
+    text-decoration: underline;
+    line-height: 15px;
+}
+
+.cardPizza ul {
+    align-self: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.cardPizza li {
+    list-style-type: '🍕';
+    padding-inline-start: 1ch;
+    font-family: var(--font-parag-);
+}
+
+.pricePizza {
+    padding: 15px;
+    margin: 0 auto;
+    font-family: var(--font-title-);
+    font-size: 1.8em;
+    text-align: center;
+    border-top: solid 1px #ccc;
+    width: 70%;
+}
+
+.btnsCard {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.btnVerMas {
+    font-weight: 900;
+    font-size: 14px;
+    color: rgb(80, 80, 80);
+    background-color: #d4d4d4;
+    padding: 10px 15px;
+    border: 2px solid #a1a1a1;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border-radius: 8px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btnVerMas:hover {
+    transition : 1000ms;
+    padding: 10px 20px;
+    transform : translateY(-0px);
+    background-color: #e0e0e0;
+    border: solid 2px #a1a1a1;
+}
+
+.btnAddpizza {
+    font-weight: 900;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0066CC;
+    padding: 10px 15px;
+    border: 2px solid #0066cc;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border-radius: 8px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btnAddpizza:hover {
+    transition : 1000ms;
+    padding: 10px 20px;
+    transform : translateY(-0px);
+    background-color: #4192e4;
+    border: solid 2px #0066cc;
+}
+
+
+
+@media (max-width: 576px) {
+    .listaPizzas {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .cardPizza {
+        width: 90%;
+    }
+  }
+
