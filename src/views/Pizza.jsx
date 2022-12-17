@@ -1,38 +1,45 @@
 import { useContext } from "react";
 import shopCarAddIco24 from "../img/ico-shopping-cart-add_24.png"
 import myContext from "../myContext";
+import { NavLink } from "react-router-dom";
 
 const Pizza = () => {
-    const { pizzas, setPizzas, pizzaId, setPizzaId } = useContext(myContext)
+    const { pizzas, setPizzas, pizzaId, setPizzaId, carro, setCarro, total, setTotal } = useContext(myContext)
 
     const pizzaDetalle = pizzas.filter((pizza) => pizza.id === pizzaId)
 
     return(
-        <>
+        <div className="detCont">
             {pizzaDetalle.map((pizza) =>{
                 return(
-                    <div className="detallePizza">
-                        <img src={pizza.img} alt="" />
-                        <div>
-                            <h1> {pizza.name[0].toUpperCase() + pizza.name.slice(1)} </h1>
-                            <p> {pizza.desc} </p>
-                            <ul>
-                            {pizza.ingredients.map((p) => {
-                            return(
-                                <li key={p + Math.random()}>{p[0].toUpperCase() + p.slice(1)}</li>
-                                    )
-                                })}
-                            </ul>
-                            <h2>${pizza.price}</h2>
-                            <div className="btnsCard">
-                                <button className="btnVerMas">Ver más</button>
-                                <button className="btnAddpizza">Añadir<img src={shopCarAddIco24} alt=""/></button>
+                    
+                        <div className="detallePizza" key={pizza.id}>
+                            <img src={pizza.img} alt="pizza" />
+                            <div className="detInfo">
+                                <h1> {pizza.name[0].toUpperCase() + pizza.name.slice(1)} </h1>
+                                <p> {pizza.desc} </p>
+                                <ul>
+                                {pizza.ingredients.map((p) => {
+                                return(
+                                    <li key={p + Math.random()}>{p[0].toUpperCase() + p.slice(1)}</li>
+                                        )
+                                    })}
+                                </ul>
+                                <h2>${pizza.price}</h2>
+                                <div className="btnsCard">
+                                    <NavLink to="/" className="btnVerMas">Volver</NavLink>
+                                    <button className="btnAddpizza" 
+                                     onClick={() => {
+                                        carro.push(pizza)
+                                        setTotal(total + pizza.price)
+                                     }}>Añadir<img src={shopCarAddIco24} alt=""/></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    
                 )
             })}
-        </>
+        </div>
         
     )
 }

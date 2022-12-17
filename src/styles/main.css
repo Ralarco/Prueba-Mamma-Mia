@@ -14,16 +14,32 @@ body {
 
 header {
     width: 100%;
-    padding: 15px;
-    background-color: aqua;
+    padding: 10px;
+    font-family: var(--font-title-);
+    font-size: 0.7em;
+    background-color: #20b48d;
+    color: #f5fafb;
+}
+
+.totalHeader {
+    background-color: #68ebc8;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px;
+    font-family: var(--font-subtitle-);
+    font-weight: 900;
+    text-align: center;
 }
 
 .listaPizzas {
-    background-color: rgb(240, 240, 240);
+    background-color: #f5fafb;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
+    padding: 40px 0;
     gap: 30px;
 }
 
@@ -99,6 +115,7 @@ header {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    font-family: var(--font-title-);
 }
 
 .btnVerMas:hover {
@@ -125,6 +142,7 @@ header {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    gap: 5px;
 }
 
 .btnAddpizza:hover {
@@ -135,7 +153,128 @@ header {
     border: solid 2px #0066cc;
 }
 
+.detCont {
+    background-color: #f5fafb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 0;
+    height: 100vh;
+    width: 100%;
+}
 
+.detallePizza {
+    display: flex;
+    width: 80%;
+    min-width: 675px;
+    height: 400px;
+    border: solid 1px #ccc;  
+    border-radius: 19px;
+    background: #f7f7f7;
+    box-shadow:  15px 15px 31px #d7d7d7,
+                -15px -15px 31px #ffffff;
+}
+
+.detallePizza img {
+    object-fit: none;
+    width: 50%;
+    border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px;
+}
+
+.detInfo {
+    margin: 20px;
+}
+
+.detInfo li {
+    list-style-type: '🍕';
+    padding-inline-start: 1ch;
+    font-family: var(--font-parag-);
+}
+
+.detallePizza h1{
+    font-family: var(--font-title-);
+    font-weight: 900;
+    line-height: 15px;
+}
+
+.detallePizza p, ul{
+    font-family: var(--font-parag-);
+    font-size: 0.9em;
+}
+
+.detallePizza h2 {
+    font-family: var(--font-subtitle-);
+    font-size: 1.8em;
+    line-height: 10px;
+    text-align: center;
+}
+
+.detallePizza .btnsCard {
+    margin-top: -20px;
+}
+
+.carroCompras {
+    width: 50%;
+    min-width: 305px;
+    margin: 30px auto;
+    display: table;
+    padding: 30px;
+    background-color: rgb(236, 236, 236);
+    border: solid 1px #ccc;
+}
+
+.itemCarro {
+    display: flex;
+    align-items: flex-start;
+    height: 50px;
+    background-color: #f7f7f7;
+    gap:15px;
+    margin-bottom: 10px;
+}
+
+.itemCarro img {
+    width: 75px;
+}
+
+.itemPrice {
+    display: flex;
+    font-size: 1.2em;
+    font-weight: 900;
+    align-self: flex-end;
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.carroCompras {
+    text-align: right;
+}
+
+.btnComprar {
+    font-weight: 900;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0066CC;
+    padding: 10px 15px;
+    border: 2px solid #0066cc;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btnVolver {
+    font-weight: 900;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    background-color: #c7c7c7;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: solid 2px #8a8a8a;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-right: 10px
+}
 
 @media (max-width: 576px) {
     .listaPizzas {
@@ -146,6 +285,30 @@ header {
 
     .cardPizza {
         width: 90%;
+    }
+
+    .detallePizza {
+        flex-direction: column;
+        min-width: 350px;
+        height: auto;
+    }
+
+    .detallePizza img {
+        object-fit: none;
+        width: 100%;
+        border-top-left-radius: 19px;
+        border-top-right-radius: 19px;
+        border-bottom-left-radius: 0;
+    }
+
+    .totalHeader {
+        position: fixed;
+        bottom: 40px;
+        left: 0;
+        top: auto;
+        z-index: 100;
+        padding: 30px 0;
+ 
     }
   }
 

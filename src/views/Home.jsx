@@ -3,7 +3,7 @@ import shopCarAddIco24 from "../img/ico-shopping-cart-add_24.png"
 import myContext from "../myContext"
 import { useNavigate } from "react-router";
 const Home = () => {
-    const {pizzas, setPizzas, pizzaId, setPizzaId} = useContext(myContext);
+    const {pizzas, setPizzas, pizzaId, setPizzaId, carro, setCarro, total, setTotal} = useContext(myContext);
 
     const navigate = useNavigate();
     const verPizza = () => navigate(`/pizza/${pizzaId}`)
@@ -26,7 +26,12 @@ const Home = () => {
                     <p className="pricePizza">${pizza.price}</p>
                     <div className="btnsCard">
                         <button className="btnVerMas" onMouseOver={() => setPizzaId(pizza.id)} onClick={verPizza}>Ver más</button>
-                        <button className="btnAddpizza">Añadir<img src={shopCarAddIco24} alt=""/></button>
+                        <button className="btnAddpizza" onClick={() => {
+                                        carro.push(pizza)
+                                        setTotal(total + pizza.price)
+                                        console.log(total)
+                                        console.log(carro)
+                                     }}>Añadir<img src={shopCarAddIco24} alt=""/></button>
                     </div>
                     
                 </div>
